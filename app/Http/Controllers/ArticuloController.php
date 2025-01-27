@@ -10,7 +10,7 @@ class ArticuloController extends Controller
     // Método para obtener todos los usuarios
     public function getAllArticulo()
     {
-        $articulos = Articulo::all();  // Esto obtiene todos los usuarios de la tabla
+        $articulos = Articulo:: where('Articulo_Status', 1)-> get();  // Esto obtiene todos los usuarios de la tabla
         return response()->json($articulos);  // Retorna los datos en formato JSON
     }
     public function getArticulo($id)
